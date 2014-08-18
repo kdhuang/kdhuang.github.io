@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Kdhuang.github.io by kdhuang</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Project');
+        data.addColumn('number', 'Ideas');
+        data.addRows([
+          [ 'Business Process Framework', 950],
+		  [ 'Organizations and Hierarchies', 378],
+		  [ 'Reporting and Analytics', 1038],
+		  [ 'Roles', 155],
+		  [ 'Security', 663],
+		  [ 'User Interface', 530],
+		  [ 'Global Infrastructure', 73],
+		  [ 'Search', 139],
+		  [ 'Mobile', 255],
+		  [ 'Collaboration', 65],
+		  [ 'Big Data Analytics', 9],
+		  [ 'Implementation Tools', 5]
+        ]);
+
+        // Set chart options
+        var options = {'title':'Brainstorms by Group',
+                       'width':600,
+                       'height':450};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Community Demo</h1>
+
+      </header>
+      <section>
+        <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Community Demo</h3>
+
+<p>This is a demo of some of the stats that can be pulled from the community reporting box and used to provide business insight.</p>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>PM Stats</h3>
+
+<p></p>
+User: khuang2
+<br>
+# Logins (3/30-4/11): 9
+<br>
+<code>select * from community_accesslog where uid=26374 and timestamp between 1396137600 and 1397217599 group by sid;</code>
+<br>
+# Comments (3/30-4/11): 2
+<br>
+<code>select * from community_comments where uid=55 and timestamp between 1396137600 and 1397217599;</code>
+<br>
+# Brainstorm Views: ?
+<br>
+# Brainstorm Comments: 1
+<br>
+<code>select * from community_comments 
+inner join community_node
+on community_comments.nid=community_node.nid
+where community_comments.uid=55 and community_comments.timestamp between 1396137600 and 1397217599 and community_node.type="idea";</code>
+
+<p></p>
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>General Stats</h3>
+
+<div id="chart_div"></div>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Other Stats</h3>
+
+<p></p>
+Brainstorm ID: 7412
+<br>
+Title: Edit Workday Account
+<br>
+Workday Response Time: .09 days
+<br>
+PM Response Time: 383.96 days
+<br>
+
+
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
